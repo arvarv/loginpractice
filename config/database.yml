@@ -1,0 +1,24 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  pool: 10
+  username: arvy
+
+development:
+  <<: *defaults
+  database: login
+
+test:
+  <<: *defaults
+  database: cukcuk_testing
+
+staging:
+  <<: *defaults
+  database: cukcuk_staging
+  password: appstone
+
+production:
+  <<: *defaults
+  database: cukcuk
+  password: appstone
