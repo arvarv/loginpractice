@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users, path: 'v1', controllers: { registrations: "api/v1/registrations", sessions: "api/v1/sesions"}
 
+  root 'welcome#index'
+
   namespace :api, path: '' do
     namespace :v1 do
+
+
       devise_scope :user do
         post 'register'                                               => 'registrations#create'
         post 'sign-in'                                                => 'sessions#create'
