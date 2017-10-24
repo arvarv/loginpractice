@@ -5,13 +5,18 @@ defaults: &defaults
   pool: 10
   username: user
   host: localhost
-
-development:
-  <<: *defaults
   database: app-dev
   
+development:
+  # <<: *defaults
+  # database: app-dev
+  # username: user
+  # host: localhost
 
- 
+ adapter: postgresql
+  host: localhost
+  username: user
+  database: app-dev
 
 test:
   <<: *defaults
