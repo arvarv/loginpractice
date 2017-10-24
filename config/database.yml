@@ -3,11 +3,15 @@ defaults: &defaults
   encoding: utf8
   reconnect: false
   pool: 10
-  username: arvy
+  username: user
+  host: localhost
 
 development:
   <<: *defaults
-  database: login
+  database: app-dev
+  
+
+ 
 
 test:
   <<: *defaults
