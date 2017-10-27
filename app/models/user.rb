@@ -5,8 +5,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
  after_create :generate_token
+
  acts_as_messageable
- 
+
+  has_many :matches
+  has_many :matched_user, through: :matches, dependent: :destroy
+  
+
   def is_confirmed?
     self.confirmed_at.nil? ? false : true
   end
